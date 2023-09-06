@@ -1,4 +1,9 @@
 
+
+const initialItems=[
+  {id:1,description:"passports",quantity:2, packed:false},
+  {id:1,description:"Socks",quantity:12, packed:false}
+];
 function App() {
   return (
     <div className="App">
@@ -28,11 +33,23 @@ function Form(){
 
 
 function PackagingList(){
-  return  <div className="list">  PackagingList </div>;
+  return (
+     <ul className="list">  
+     {initialItems.map((item)=>(
+   <Item item={item}/>
+     ))}
+     
+   </ul>
+     
+     );
   
 
 }
 
+
+function Item(item){
+  return <li>{item.description}</li>
+}
 function Stats(){
  return(
   <footer className="stats">
